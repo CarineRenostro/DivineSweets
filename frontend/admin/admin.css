@@ -1,0 +1,470 @@
+
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 16px; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #f6e5df;
+  color: #721d24;
+  min-height: 100vh;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+h1 { font-size: 1.6rem; font-weight: 700; margin: 0; }
+h2 { font-size: 1.15rem; font-weight: 700; margin: 0; }
+p  { margin: 0; line-height: 1.6; }
+
+button { font-family: 'Montserrat', sans-serif; cursor: pointer; }
+
+/* ============================================================
+   TOPO
+   ============================================================ */
+.admin-topo {
+  background: #721d24;
+  color: #f6e5df;
+  padding: 18px 28px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.admin-topo .marca {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+.admin-topo .marca span {
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+.admin-topo a.voltar-site {
+  color: #f6e5df;
+  text-decoration: none;
+  font-size: 0.8rem;
+  border: 1px solid rgba(246,229,223,0.4);
+  padding: 8px 14px;
+}
+.admin-topo a.voltar-site:hover { background: rgba(246,229,223,0.12); }
+
+.admin-topo .acoes-topo {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.btn-sair {
+  background: transparent;
+  border: 1px solid rgba(246,229,223,0.4);
+  color: #f6e5df;
+  padding: 8px 14px;
+  font-size: 0.8rem;
+}
+.btn-sair:hover { background: rgba(246,229,223,0.12); }
+
+/* ============================================================
+   ABAS (Doces / Pedidos)
+   ============================================================ */
+.abas-admin {
+  display: flex;
+  gap: 8px;
+}
+.abas-admin .aba {
+  background: transparent;
+  border: 1px solid rgba(246,229,223,0.4);
+  color: #f6e5df;
+  padding: 8px 16px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.abas-admin .aba:hover { background: rgba(246,229,223,0.12); }
+.abas-admin .aba.ativa {
+  background: #f6e5df;
+  color: #721d24;
+}
+.abas-admin .aba.ativa:hover { background: #f6e5df; }
+
+/* ============================================================
+   CONTAINER
+   ============================================================ */
+.admin-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 36px 24px 80px;
+}
+
+.admin-cabecalho {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.admin-cabecalho p {
+  color: #8a4a52;
+  font-size: 0.9rem;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid #721d24;
+  background: transparent;
+  color: #721d24;
+  transition: all 0.2s;
+}
+.btn:hover { background: #721d24; color: #f6e5df; }
+
+.btn-primario {
+  background: #721d24;
+  color: #f6e5df;
+}
+.btn-primario:hover { background: #5a161c; border-color: #5a161c; }
+
+.btn-perigo {
+  border-color: #a33b3b;
+  color: #a33b3b;
+}
+.btn-perigo:hover { background: #a33b3b; color: #fff; border-color: #a33b3b; }
+
+.btn-texto {
+  border: none;
+  background: none;
+  color: #721d24;
+  text-decoration: underline;
+  padding: 6px 4px;
+  font-size: 0.82rem;
+  text-transform: none;
+  letter-spacing: normal;
+  font-weight: 600;
+}
+.btn-texto:hover { opacity: 0.7; }
+
+/* ============================================================
+   GRADE DE DOCES (cards administráveis)
+   ============================================================ */
+.admin-grade {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 18px;
+}
+
+.admin-card {
+  background: #fff;
+  border: 1px solid #e4cfc8;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+.admin-card .imagem-wrap {
+  width: 100%;
+  height: 180px;
+  background: #f1e2dc;
+  overflow: hidden;
+}
+.admin-card .imagem-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.admin-card .imagem-wrap.sem-imagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b98e8e;
+  font-size: 0.75rem;
+  text-align: center;
+  padding: 10px;
+}
+.admin-card .corpo {
+  padding: 14px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  flex: 1;
+}
+.admin-card h2 { font-size: 0.95rem; line-height: 1.35; }
+.tag-padrao {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #8a4a52;
+  background: #f1e2dc;
+  padding: 2px 8px;
+  vertical-align: middle;
+}
+.admin-card .linha-acoes {
+  display: flex;
+  gap: 14px;
+  margin-top: auto;
+}
+
+/* Cartão "adicionar novo" */
+.admin-card.adicionar {
+  align-items: center;
+  justify-content: center;
+  border: 2px dashed #d8b9b1;
+  background: transparent;
+  min-height: 260px;
+}
+.admin-card.adicionar button {
+  background: none;
+  border: none;
+  color: #721d24;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.admin-card.adicionar button:hover { opacity: 0.7; }
+.admin-card.adicionar .simbolo-mais {
+  font-size: 2.2rem;
+  line-height: 1;
+  font-weight: 400;
+}
+
+/* Estado vazio */
+.estado-vazio {
+  text-align: center;
+  padding: 60px 20px;
+  color: #8a4a52;
+  border: 1px dashed #d8b9b1;
+}
+
+/* ============================================================
+   TELA DE LOGIN
+   ============================================================ */
+.login-tela {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+.login-caixa {
+  background: #fff;
+  padding: 44px 36px;
+  width: 100%;
+  max-width: 380px;
+  border: 1px solid #e4cfc8;
+  text-align: center;
+}
+.login-caixa h1 { margin-bottom: 6px; }
+.login-caixa .subtitulo {
+  font-size: 0.85rem;
+  color: #8a4a52;
+  margin-bottom: 28px;
+}
+.login-caixa form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  text-align: left;
+}
+.login-caixa label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+  display: block;
+}
+.login-caixa input {
+  width: 100%;
+  padding: 11px 12px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #c9a8a1;
+  outline: none;
+}
+.login-caixa input:focus { border-color: #721d24; }
+.login-caixa .btn-primario { margin-top: 6px; justify-content: center; }
+.login-erro {
+  display: none;
+  background: #f8d7da;
+  color: #721c24;
+  font-size: 0.82rem;
+  padding: 10px;
+  margin-top: -4px;
+}
+.aviso-seguranca {
+  margin-top: 22px;
+  font-size: 0.72rem;
+  color: #b08a85;
+  line-height: 1.5;
+}
+
+/* ============================================================
+   MODAL (formulário de doce)
+   ============================================================ */
+.modal-fundo {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 14, 17, 0.55);
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  z-index: 100;
+}
+.modal-fundo.aberto { display: flex; }
+
+.modal-caixa {
+  background: #fff;
+  width: 100%;
+  max-width: 460px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 28px 28px 24px;
+}
+.modal-caixa h2 { margin-bottom: 18px; font-size: 1.1rem; }
+
+.campo {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
+.campo label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.campo input[type="text"],
+.campo input[type="url"] {
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #c9a8a1;
+  outline: none;
+}
+.campo input:focus { border-color: #721d24; }
+.campo .dica {
+  font-size: 0.72rem;
+  color: #8a4a52;
+  margin-top: 5px;
+}
+
+.preview-imagem {
+  margin-top: 8px;
+  width: 100%;
+  height: 150px;
+  background: #f1e2dc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  font-size: 0.75rem;
+  color: #b98e8e;
+}
+.preview-imagem img { width: 100%; height: 100%; object-fit: cover; }
+
+.modal-acoes {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+/* Confirmação de remoção */
+.modal-caixa.confirmar p { font-size: 0.9rem; margin-bottom: 6px; }
+.modal-caixa.confirmar .nome-doce { font-weight: 700; }
+
+/* Toast de feedback */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: #721d24;
+  color: #f6e5df;
+  padding: 14px 20px;
+  font-size: 0.85rem;
+  display: none;
+  align-items: center;
+  gap: 10px;
+  z-index: 200;
+  max-width: 320px;
+}
+.toast.mostrar { display: flex; }
+.toast.toast-erro { background: #a33b3b; }
+
+/* ============================================================
+   PEDIDOS
+   ============================================================ */
+.pedidos-lista {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 18px;
+}
+.pedido-card {
+  background: #fff;
+  border: 1px solid #e4cfc8;
+  padding: 18px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.pedido-card.atendido { opacity: 0.6; }
+.pedido-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 10px;
+}
+.pedido-cabecalho h2 { font-size: 1rem; }
+.pedido-data {
+  font-size: 0.72rem;
+  color: #8a4a52;
+  white-space: nowrap;
+}
+.pedido-contato,
+.pedido-endereco {
+  font-size: 0.82rem;
+  color: #8a4a52;
+}
+.pedido-descricao {
+  font-size: 0.88rem;
+  white-space: pre-wrap;
+}
+.pedido-card .linha-acoes {
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 600px) {
+  .admin-topo { padding: 14px 16px; }
+  .admin-container { padding: 24px 16px 60px; }
+  .admin-cabecalho { flex-direction: column; align-items: flex-start; }
+}

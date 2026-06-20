@@ -1,0 +1,366 @@
+/* --- Definição da fonte Montserrat ------------------------- */
+@font-face {
+    font-family: 'Montserrat';
+    src: url('./fonts/Montserrat/Montserrat-VariableFont_wght.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  background: #fff;
+  color: #721d24;
+  overflow-x: hidden;
+}
+
+img { display: block; max-width: 100%; height: auto; }
+
+h2 { font-size: 2rem;   font-weight: 400; margin: 0; }
+h3 { font-size: 1.5rem; font-weight: 700; margin: 0; }
+h6 { font-size: 1rem;   font-weight: 600; margin: 0; }
+p  { margin: 0; line-height: 1.8; }
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  width: 100%;
+  overflow: hidden;
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+section.visivel { opacity: 1; transform: translateY(0); }
+
+/* ============================================================
+   CAPA
+   ============================================================ */
+#hero {
+  background-color: #f6e5df;
+}
+#hero .linha {
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 600px;
+}
+#hero .texto {
+  flex: 0 0 33.33%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 40px 30px;
+  gap: 16px;
+}
+#hero .texto h2 { font-size: 3rem; color: #721d24; }
+#hero .texto p  { color: #721d24; }
+
+#hero .foto-centro {
+  flex: 0 0 35%;
+  background-image: url('../imagens/buquet.jpeg');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+}
+#hero .foto-direita {
+  flex: 0 0 31.67%;
+  background-image: url('../imagens/evento-1.jpg');
+  background-size: cover;
+  background-position: center;
+  min-height: 500px;
+}
+
+/* Instagram */
+.instagram-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-decoration: none;
+  color: #721d24;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-top: 4px;
+}
+.instagram-link svg { width: 32px; height: 32px; flex-shrink: 0; }
+.instagram-link:hover { opacity: 0.75; }
+
+/* ============================================================
+   NOSSA HISTÓRIA
+   ============================================================ */
+#historia {
+  background: #fff;
+}
+#historia .linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 60px 0;
+  gap: 0;
+}
+#historia .texto {
+  flex: 0 0 50%;
+  padding: 30px;
+}
+#historia .texto h2 { margin-bottom: 20px; }
+#historia .texto p  { color: #721d24; text-align: justify; }
+#historia .foto {
+  flex: 0 0 50%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+#historia .foto img {
+  width: 100%;
+  max-width: 469px;
+  height: 520px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* ============================================================
+   NOSSOS DOCES
+   ============================================================ */
+#doces {
+  background-color: #f6e5df;
+  padding: 60px 0;
+}
+#doces h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#doces .grade {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+#doces .card {
+  background: #721d24;
+  display: flex;
+  flex-direction: column;
+  padding: 10px 10px 24px;
+}
+#doces .card img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+}
+#doces .card h6 {
+  color: #f6e5df;
+  margin-top: 16px;
+  font-weight: 400;
+}
+
+/* ============================================================
+   COMO FAZER SEU PEDIDO
+   ============================================================ */
+#como-pedir {
+  background: #fff5f0;
+}
+#como-pedir .linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 60px 0;
+}
+#como-pedir .foto {
+  flex: 0 0 50%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+}
+#como-pedir .foto img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+#como-pedir .conteudo {
+  flex: 0 0 50%;
+  padding: 30px;
+}
+#como-pedir h2 { margin-bottom: 24px; }
+#como-pedir .grade-passos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+#como-pedir .passo {
+  background: #721d24;
+  padding: 16px;
+}
+#como-pedir .passo h3 { color: #f6e5df; margin-bottom: 10px; }
+#como-pedir .passo h6 { color: #f6e5df; margin-bottom: 8px; font-size: 0.9rem; }
+#como-pedir .passo p  { color: #f6e5df; font-size: 0.85rem; }
+
+/* ============================================================
+   DOCES SAZONAIS
+   ============================================================ */
+#sazonais {
+  background-color: #f6e5df;
+  padding: 60px 0;
+}
+#sazonais h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#sazonais .grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+#sazonais .card {
+  background: #721d24;
+  padding: 10px 10px 24px;
+}
+#sazonais .card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ============================================================
+   PARA O SEU EVENTO
+   ============================================================ */
+#eventos {
+  background: #fff;
+  padding: 60px 0;
+}
+#eventos h2 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+#eventos .grade {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+}
+#eventos .card {
+  background: #721d24;
+  padding: 10px 10px 18px;
+}
+#eventos .card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+/* ============================================================
+   FORMULÁRIO DE PEDIDO
+   ============================================================ */
+#formulario {
+  background-color: #f6e5df;
+}
+#formulario .linha {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 60px 0;
+}
+#formulario .form-lado {
+  flex: 0 0 50%;
+  padding: 30px;
+}
+#formulario h2 { margin-bottom: 24px; }
+
+#formulario .foto-lado {
+  flex: 0 0 50%;
+  padding: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#formulario .foto-lado img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+}
+
+.grupo { display: flex; flex-direction: column; margin-bottom: 10px; }
+
+label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #721d24;
+  margin-bottom: 5px;
+}
+input, textarea {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 0.9rem;
+  font-family: 'Montserrat', sans-serif;
+  border: 1px solid #000;
+  background: #fff;
+  outline: none;
+  transition: border-color 0.2s;
+  border-radius: 0;
+  color: #333;
+}
+input:focus, textarea:focus { border-color: #721d24; }
+textarea { resize: vertical; }
+
+.btn-enviar {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 32px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+  border: 2px solid #b0b0b0;
+  background: transparent;
+  color: #721d24;
+  transition: all 0.25s;
+}
+.btn-enviar:hover {
+  background: #721d24;
+  color: #f6e5df;
+  border-color: #721d24;
+}
+
+.msg { display: none; padding: 12px; font-size: 0.9rem; margin-top: 10px; }
+.msg-sucesso { background: #d4edda; color: #721c24; }
+.msg-erro    { background: #f8d7da; color: #721c24; }
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width: 991px) {
+  /* hero */
+  #hero .linha { flex-direction: column; }
+  #hero .texto, #hero .foto-centro, #hero .foto-direita {
+    flex: 0 0 100%; width: 100%;
+  }
+  #hero .texto h2 { font-size: 2.25rem; }
+  #hero .foto-centro, #hero .foto-direita { min-height: 280px; }
+
+  /* história */
+  #historia .texto, #historia .foto { flex: 0 0 100%; }
+
+  /* doces */
+  #doces .grade { grid-template-columns: repeat(2, 1fr); }
+
+  /* como pedir */
+  #como-pedir .foto, #como-pedir .conteudo { flex: 0 0 100%; }
+  #como-pedir .grade-passos { grid-template-columns: 1fr; }
+
+  /* sazonais e eventos */
+  #sazonais .grade, #eventos .grade { grid-template-columns: repeat(2, 1fr); }
+
+  /* formulário */
+  #formulario .form-lado, #formulario .foto-lado { flex: 0 0 100%; }
+}
+
+@media (max-width: 575px) {
+  #hero .texto h2 { font-size: 1.875rem; }
+  #doces .grade   { grid-template-columns: 1fr; }
+  #sazonais .grade, #eventos .grade { grid-template-columns: 1fr; }
+}

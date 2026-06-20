@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>Divine Sweets — Área Administrativa</title>
+  <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════════════════
+       TELA DE LOGIN
+  ══════════════════════════════════════════════════════ -->
+  <div id="tela-login" class="login-tela">
+    <div class="login-caixa">
+      <h1>Divine Sweets</h1>
+      <p class="subtitulo">Área administrativa</p>
+
+      <form id="form-login" novalidate>
+        <div>
+          <label for="campo-senha">Senha de acesso</label>
+          <input type="password" id="campo-senha" name="senha" placeholder="Digite a senha" required autofocus>
+        </div>
+        <button type="submit" class="btn btn-primario">Entrar</button>
+        <div id="login-erro" class="login-erro">✗ Senha incorreta. Tente novamente.</div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       TELA ADMINISTRATIVA (CRUD)
+  ══════════════════════════════════════════════════════ -->
+  <div id="tela-admin" style="display:none;">
+
+    <header class="admin-topo">
+      <div class="marca">
+        <strong>Divine Sweets</strong>
+        <span>Área administrativa</span>
+      </div>
+      <nav class="abas-admin">
+        <button type="button" id="aba-doces" class="aba ativa">Doces</button>
+        <button type="button" id="aba-pedidos">Pedidos</button>
+      </nav>
+      <div class="acoes-topo">
+        <a class="voltar-site" href="../index.html">← Ver site</a>
+        <button id="btn-sair" class="btn-sair" type="button">Sair</button>
+      </div>
+    </header>
+
+    <main class="admin-container">
+
+      <!-- ── Aba: Doces ────────────────────────────────────── -->
+      <section id="secao-doces">
+        <div class="admin-cabecalho">
+          <div>
+            <h1>Nossos Doces</h1>
+            <p>Adicione, edite ou remova qualquer doce exibido na página inicial — inclusive os marcados como "Padrão", que vieram de fábrica.</p>
+          </div>
+        </div>
+
+        <div id="admin-grade" class="admin-grade">
+          <!-- Cards gerados via JavaScript -->
+        </div>
+
+        <div id="estado-vazio" class="estado-vazio" style="display:none;">
+          Nenhum doce extra cadastrado ainda. Use o cartão "Adicionar doce" para começar.
+        </div>
+      </section>
+
+      <!-- ── Aba: Pedidos ──────────────────────────────────── -->
+      <section id="secao-pedidos" style="display:none;">
+        <div class="admin-cabecalho">
+          <div>
+            <h1>Pedidos Recebidos</h1>
+            <p>Pedidos enviados pelo formulário "Faça Seu Pedido" da página principal.</p>
+          </div>
+        </div>
+
+        <div id="pedidos-lista" class="pedidos-lista">
+          <!-- Cards gerados via JavaScript -->
+        </div>
+
+        <div id="pedidos-vazio" class="estado-vazio" style="display:none;">
+          Nenhum pedido recebido ainda.
+        </div>
+      </section>
+
+    </main>
+
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       MODAL: ADICIONAR / EDITAR DOCE
+  ══════════════════════════════════════════════════════ -->
+  <div id="modal-form" class="modal-fundo">
+    <div class="modal-caixa">
+      <h2 id="titulo-modal">Adicionar doce</h2>
+
+      <form id="form-doce" novalidate>
+        <input type="hidden" id="campo-id">
+
+        <div class="campo">
+          <label for="campo-nome-doce">Nome do doce</label>
+          <input type="text" id="campo-nome-doce" placeholder="Ex.: Cookie Pistache" required>
+        </div>
+
+        <div class="campo">
+          <label for="campo-imagem-doce">Foto do doce</label>
+          <input type="file" id="campo-imagem-doce" accept="image/*">
+          <p class="dica" id="dica-imagem">Escolha uma foto do seu computador.</p>
+          <div id="preview-imagem" class="preview-imagem">A pré-visualização aparece aqui</div>
+        </div>
+
+        <div class="modal-acoes">
+          <button type="button" id="btn-cancelar-modal" class="btn">Cancelar</button>
+          <button type="submit" class="btn btn-primario">Salvar</button>
+        </div>
+      </form>
+
+      <button type="button" id="btn-fechar-modal" class="btn-texto" style="margin-top:14px;">Fechar</button>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════════════════
+       MODAL: CONFIRMAR REMOÇÃO
+  ══════════════════════════════════════════════════════ -->
+  <div id="modal-confirmar" class="modal-fundo">
+    <div class="modal-caixa confirmar">
+      <h2>Remover doce</h2>
+      <p>Tem certeza que deseja remover</p>
+      <p class="nome-doce" id="nome-doce-confirmar"></p>
+      <p style="margin-top:10px;">Esta ação não pode ser desfeita.</p>
+
+      <div class="modal-acoes">
+        <button type="button" id="btn-cancelar-remocao" class="btn">Cancelar</button>
+        <button type="button" id="btn-confirmar-remocao" class="btn btn-perigo">Remover</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast de feedback -->
+  <div id="toast" class="toast"></div>
+
+  <script src="../js/doces-data.js?v=5"></script>
+  <script src="admin.js?v=5"></script>
+</body>
+</html>
